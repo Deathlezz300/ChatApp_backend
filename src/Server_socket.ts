@@ -11,7 +11,7 @@ export class Server_socket{
         this.sessions=[] as Session[];
         this.socket=new WebSocketServer(server,{
             cors:{
-                origin:'http://localhost:5173'
+                origin:"*"
             }
         });
         this.RutasConnection();
