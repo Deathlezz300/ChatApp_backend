@@ -17,7 +17,9 @@ export class Server{
         this.puerto=process.env.PORT || '8000';
         this.listen();
         dotenv.config()
-        this.app.use(cors());
+        this.app.use(cors({
+            origin:["http://localhost:3000","http://localhost:8080","https://chatapp-300.netlify.app"],
+        }));
         this.app.use(express.json());
         this.Routes();
     }
